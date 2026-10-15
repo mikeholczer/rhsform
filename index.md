@@ -4,8 +4,6 @@ permalink: /
 title: Home
 ---
 
-{% include home-hero.html %}
-
 ## Support Us!
 
 Three ways to keep music at Rockville High School strong.

@@ -2,5 +2,11 @@
 layout: default
 ---
 <div class="home">
+  {%- include home-hero.html %}
+  <div class="page-layout">
+    {%- include rail.html html=content %}
+    <div class="home-body">
 {{ content }}
+    </div>
+  </div>
 </div>

@@ -1,0 +1,44 @@
+{%- comment %}
+Sticky side rail shared by the interior pages and the home page: an automatic
+"On this page" list plus a "Get involved" call to action.
+
+The list is parsed straight out of the rendered page body (kramdown gives every
+heading an id), so maintainers never have to keep a separate table of contents
+in sync. Page-level sections are h2s; only when a page has none (for example
+Spirit Store, which leads with an h3) does the h3 level stand in - that keeps
+component headings like sponsorship tier names and news headlines out of it.
+
+Pass the rendered body in as `html`.
+{%- endcomment %}
+{%- assign toc_level = '2' -%}
+{%- unless include.html contains '<h2' -%}
+  {%- assign toc_level = '3' -%}
+{%- endunless -%}
+{%- assign chunks = include.html | split: '<h' -%}
+{%- assign toc = '' -%}
+{%- for chunk in chunks offset: 1 -%}
+  {%- assign level = chunk | slice: 0, 1 -%}
+  {%- if level == toc_level -%}
+    {%- assign id = chunk | split: 'id="' | slice: 1 | first | split: '"' | first -%}
+    {%- assign title = chunk | split: '</h' | first | split: '>' | slice: 1, 100 | join: '>' | strip_html | strip -%}
+    {%- if id != blank and title != blank -%}
+      {%- capture item -%}<li><a href="#{{ id }}">{{ title }}</a></li>{%- endcapture -%}
+      {%- assign toc = toc | append: item -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+<aside class="page-rail">
+  <nav class="page-rail__toc" aria-label="On this page">
+    <p class="page-rail__title">On this page</p>
+    {%- if toc != '' %}
+    <ul>{{ toc }}</ul>
+    {%- else %}
+    <p class="page-rail__empty">A single short read.</p>
+    {%- endif %}
+  </nav>
+  <div class="page-rail__cta">
+    <p class="page-rail__title">Get involved</p>
+    <p class="page-rail__note">Help keep music strong for every Rockville student.</p>
+    <a class="text-link" href="{{ site.data.support_actions[0].link_url }}">Become a member</a>
+  </div>
+</aside>

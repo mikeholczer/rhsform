@@ -18,7 +18,7 @@ Jekyll 4 static site for Friends of Rockville Music (FORM). No custom plugins; G
   - `announcements.yml` -> home news feed
   - `sponsor_tiers.yml` -> sponsorship tiers
   - `meetings.yml`, `groups.yml`, `events/*.yml` -> News and Events calendar
-- `_layouts/` (`default`, `home`, `page`); the home hero copy lives in `_includes/home-hero.html`; single stylesheet `assets/css/style.css`; images in `assets/images/`.
+- `_layouts/` (`default`, `home`, `page`); the home hero copy lives in `_includes/home-hero.html` and the sticky "On this page" side rail shared by the home page and interior pages lives in `_includes/rail.html`; single stylesheet `assets/css/style.css`; images in `assets/images/`.
 - Maintainer references: `README.md`, `GLOSSARY.md`.
 
 ## Conventions
@@ -34,3 +34,4 @@ Jekyll 4 static site for Friends of Rockville Music (FORM). No custom plugins; G
 - Data paths (`image`, `link_url`) are absolute site paths; templates apply `relative_url`.
 - Markdown pages embed internal links/images as hard-coded absolute paths that are not `relative_url`-filtered; they only work at site root. A project site with `baseurl` requires conversion.
 - Broken Liquid or invalid YAML in `_data/` fails the build; rebuild after every edit.
+- `_includes/rail.html` builds the "On this page" list by parsing the rendered page HTML (`content`), so a heading change updates the rail automatically - but section headings must be h2 (or h3 on pages with no h2), and page-scoped selectors reach them through `.page-body` / `.home-body`, not `.page` / `.home` directly.

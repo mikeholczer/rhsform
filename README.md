@@ -47,6 +47,26 @@ The home page hero is the one exception: its kicker, headline, lede and buttons
 live in `_includes/home-hero.html` because they sit inside a full-bleed band that
 Markdown cannot express.
 
+The home page and every interior page also render `_includes/rail.html`: a sticky
+side rail holding an automatic "On this page" list and a "Get involved" call to
+action. The list is read from the rendered page headings (h2, or h3 on pages that
+have no h2), so it stays in sync on its own. Interior pages show an orange masthead
+kicker above the title, defaulting to the site title; set `kicker:` in a page's
+front matter to override it.
+
+## Design prototype
+
+The interior-page layout was chosen from three variants explored on the throwaway
+branch `prototype/interior-page-variants`:
+
+- **A** - full-bleed banner hero + single prose column
+- **B** - plain masthead + sticky rail (the one kept)
+- **C** - centred display masthead + full-bleed, numbered section bands
+
+That branch keeps the full switchable prototype (`?variant=`) as the primary
+source, including the two options that lost. Only the chosen design lives on
+`main`.
+
 ## Deploying
 
 The site is GitHub Pages compatible (it uses no custom plugins).
