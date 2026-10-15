@@ -4,14 +4,16 @@ permalink: /
 title: Home
 ---
 
-# Friends of Rockville Music
-
-Want to know what's coming up soon? Find FORM member meetings and other Music Department &amp; Theatre Program event dates in our [NEWS and EVENTS](/news-and-events/) tab [here](/news-and-events/).
-
-**Get ready for an exciting year!**
+{% include home-hero.html %}
 
 ## Support Us!
 
+Three ways to keep music at Rockville High School strong.
+
 {% include support-actions.html %}
+
+## Latest News
+
+Fundraisers, sponsors and everything else happening right now.
 
 {% include announcements.html %}

@@ -191,7 +191,16 @@ ol {
   padding: 2rem 1rem 3rem;
 }
 
-.home > h1:first-child,
+.home > h2 {
+  margin: 3rem 0 0.25rem;
+}
+
+/* The line under a home section heading ("Three ways to help..."). */
+.home > h2 + p {
+  margin: 0 0 1.25rem;
+  color: var(--ink-soft);
+}
+
 .page-header h1 {
   margin-top: 0;
 }
@@ -230,31 +239,110 @@ figure {
   color: #fff;
 }
 
+/* Secondary button for dark backgrounds. */
+.button--ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.button--ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+/* Inline "read more" link used by the home page lists. */
+.text-link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: " →";
+}
+
+/* Home hero */
+.home-hero {
+  /* Full-bleed: cancel .site-main's 1rem gutter and 2rem top padding so the
+     band runs edge to edge and sits flush under the header. The inner padding
+     puts the copy back on the same measure as the rest of the page. */
+  margin: -2rem calc(50% - 50vw) 2.5rem;
+  padding: 3.5rem max(1rem, calc(50vw - 31rem)) 3.75rem;
+  background: radial-gradient(120% 140% at 12% 0%, #2a2f38 0%, var(--header-bg) 55%);
+  color: var(--header-ink);
+}
+
+.home-hero__kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.home-hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.home-hero__lede {
+  max-width: 46ch;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: var(--footer-ink);
+}
+
+.home-hero__lede a {
+  color: #fff;
+}
+
+.home-hero__shout {
+  margin: 0 0 1.75rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-hero__actions .button {
+  margin-top: 0;
+}
+
 /* Support Us! */
 .support-list {
   list-style: none;
-  margin: 1.5rem 0;
+  margin: 0;
   padding: 0;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .support-item {
   position: relative;
-  padding: 1.25rem 1.25rem 1.35rem;
-  background: var(--surface);
+  padding: 1.75rem 1.25rem 1.25rem;
+  background: #fff;
   border: 1px solid var(--border);
-  border-left: 4px solid var(--orange);
   border-radius: var(--radius);
+  box-shadow: 0 8px 24px -18px rgba(16, 18, 22, 0.4);
 }
 
+/* The step number straddles the top edge of its card. */
 .support-item__step {
-  display: inline-grid;
+  position: absolute;
+  top: -0.9rem;
+  left: 1.25rem;
+  display: grid;
   place-items: center;
-  width: 1.9rem;
-  height: 1.9rem;
-  margin-bottom: 0.4rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background: var(--orange);
   color: #fff;
@@ -266,49 +354,55 @@ figure {
 }
 
 .support-item p {
-  margin-bottom: 0.9rem;
+  margin: 0 0 0.75rem;
   color: var(--ink-soft);
 }
 
-/* Announcements */
+/* Announcements: one story per row, image left and copy right. */
 .announcements {
   display: grid;
-  gap: 1.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 1rem;
+  gap: 1.5rem;
 }
 
 .announcement {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 1px 2px rgba(16, 18, 22, 0.05);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  align-items: start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.announcement__media {
-  background: var(--surface);
+.announcement:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .announcement__media img {
   display: block;
   width: 100%;
-  max-height: 24rem;
-  object-fit: contain;
-}
-
-.announcement__body {
-  padding: 1.25rem;
+  border-radius: var(--radius);
 }
 
 .announcement__body h3 {
-  margin-top: 0;
+  margin: 0 0 0.5rem;
 }
 
 .announcement__body > :last-child {
   margin-bottom: 0;
+}
+
+/* No image, so the title takes the image's column instead of squeezing the
+   copy into it - the row still spans the full width. */
+.announcement__lead h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.announcement--text-only {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--orange);
 }
 
 /* Events */
@@ -449,6 +543,13 @@ figure {
 
   .site-nav a {
     padding: 0.7rem 0.75rem;
+  }
+}
+
+/* Stack the home news feed on narrow screens. */
+@media (max-width: 760px) {
+  .announcement {
+    grid-template-columns: 1fr;
   }
 }
 

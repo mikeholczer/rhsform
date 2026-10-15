@@ -3,14 +3,20 @@
   <article class="announcement{% unless a.image %} announcement--text-only{% endunless %}">
     {%- if a.image %}
     <div class="announcement__media">
-      <img src="{{ a.image | relative_url }}" alt="{{ a.image_alt | default: '' }}">
+      <img src="{{ a.image | relative_url }}" alt="{{ a.image_alt | default: '' }}" loading="lazy">
+    </div>
+    {%- else %}
+    <div class="announcement__lead">
+      <h3>{{ a.title }}</h3>
     </div>
     {%- endif %}
     <div class="announcement__body">
+      {%- if a.image %}
       <h3>{{ a.title }}</h3>
+      {%- endif %}
       {{ a.body | markdownify }}
       {%- if a.link_url %}
-      <p><a class="button" href="{{ a.link_url | relative_url }}">{{ a.link_text }}</a></p>
+      <p><a class="text-link" href="{{ a.link_url | relative_url }}">{{ a.link_text }}</a></p>
       {%- endif %}
     </div>
   </article>

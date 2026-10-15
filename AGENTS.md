@@ -15,10 +15,10 @@ Jekyll 4 static site for Friends of Rockville Music (FORM). No custom plugins; G
 - `_data/*.yml` holds rotating content; rendered by `_includes/*.html`:
   - `navigation.yml` -> header nav
   - `support_actions.yml` -> home "Support Us!" actions
-  - `announcements.yml` -> home news cards
+  - `announcements.yml` -> home news feed
   - `sponsor_tiers.yml` -> sponsorship tiers
   - `meetings.yml`, `groups.yml`, `events/*.yml` -> News and Events calendar
-- `_layouts/` (`default`, `home`, `page`); single stylesheet `assets/css/style.css`; images in `assets/images/`.
+- `_layouts/` (`default`, `home`, `page`); the home hero copy lives in `_includes/home-hero.html`; single stylesheet `assets/css/style.css`; images in `assets/images/`.
 - Maintainer references: `README.md`, `GLOSSARY.md`.
 
 ## Conventions

@@ -37,11 +37,15 @@ touching HTML:
 | --- | --- |
 | `_data/navigation.yml` | The top navigation bar |
 | `_data/support_actions.yml` | The home page "Support Us!" actions |
-| `_data/announcements.yml` | The home page news cards |
+| `_data/announcements.yml` | The home page news feed |
 | `_data/sponsor_tiers.yml` | The Platinum / Gold / Silver sponsorship tiers |
 | `_data/meetings.yml` | FORM meeting heading/detail on the News and Events page |
 | `_data/groups.yml` | Event group metadata (titles, intros/outros) on the News and Events page |
 | `_data/events/*.yml` | Dated items for each event group on the News and Events page |
+
+The home page hero is the one exception: its kicker, headline, lede and buttons
+live in `_includes/home-hero.html` because they sit inside a full-bleed band that
+Markdown cannot express.
 
 ## Deploying
 

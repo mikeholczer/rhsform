@@ -1,0 +1,20 @@
+{%- comment %}
+The home page hero band. Its copy lives here rather than in index.md because the
+band wraps that copy in a full-bleed dark panel, which the Markdown page cannot
+express. The "Become a member" button points at the first support action in
+_data/support_actions.yml so the sign-up link stays defined in one place.
+{%- endcomment %}
+<div class="home-hero">
+  <p class="home-hero__kicker">{{ site.tagline }}</p>
+  <h1 class="home-hero__title">{{ site.title }}</h1>
+  <p class="home-hero__lede">
+    Want to know what's coming up soon? Find FORM member meetings and other
+    Music Department &amp; Theatre Program event dates in our
+    <a href="{{ '/news-and-events/' | relative_url }}">NEWS and EVENTS</a> tab.
+  </p>
+  <p class="home-hero__shout">Get ready for an exciting year!</p>
+  <div class="home-hero__actions">
+    <a class="button" href="{{ site.data.support_actions[0].link_url }}">Become a member</a>
+    <a class="button button--ghost" href="{{ '/news-and-events/' | relative_url }}">See what's on</a>
+  </div>
+</div>
