@@ -1,0 +1,35 @@
+# Corporate sponsorship tiers, in display order.
+- name: Platinum Sponsor
+  slug: platinum
+  price: "$1,200"
+  image: /assets/images/sponsorship-platinum.png
+  image_alt: Platinum sponsorship
+  benefits:
+    - Announcement of sponsorship when marching band introduced at home football games
+    - Table in hallway at concerts & performances at RHS
+    - Acknowledgment of sponsorship in email blasts to FORM email list throughout the school year
+    - Logo on individual sponsor banner applied to our instrument truck — this truck travels to band competitions & events throughout Montgomery County, currently (4) scheduled for 2025-26
+    - Logo on individual sponsor banner displayed in hallway at concerts & performances at RHS
+    - 1/2 page Logo or ad in printed programs at concerts & performances at RHS
+    - Logo or ad with hyperlink on FORM website
+
+- name: Gold Sponsor
+  slug: gold
+  price: "$700"
+  image: /assets/images/sponsorship-gold.png
+  image_alt: Gold sponsorship
+  benefits:
+    - Acknowledgment of sponsorship in email blasts to FORM email list throughout the school year
+    - Logo (large) on shared sponsors banner applied to our instrument truck—this truck travels to band competitions & events throughout Montgomery County, currently (4) scheduled for 2025-26
+    - Logo (large) on shared sponsors banner displayed in hallway at concerts & performances at RHS
+    - 1/2 page Logo or ad in printed programs at concerts & performances at RHS
+    - Logo or ad with hyperlink on FORM website
+
+- name: Silver Sponsor
+  slug: silver
+  price: "$350"
+  benefits:
+    - Logo (medium) on shared sponsors banner applied to our instrument truck—this truck travels to band competitions & events throughout Montgomery County, currently (4) scheduled for 2025-26
+    - Logo (medium) on shared sponsors banner displayed in hallway at concerts & performances at RHS
+    - 1/4 page Logo or ad in printed programs at concerts & performances at RHS
+    - Logo or ad with hyperlink on FORM website

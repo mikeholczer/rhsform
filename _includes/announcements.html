@@ -1,0 +1,18 @@
+<div class="announcements">
+{%- for a in site.data.announcements %}
+  <article class="announcement{% unless a.image %} announcement--text-only{% endunless %}">
+    {%- if a.image %}
+    <div class="announcement__media">
+      <img src="{{ a.image | relative_url }}" alt="{{ a.image_alt | default: '' }}">
+    </div>
+    {%- endif %}
+    <div class="announcement__body">
+      <h3>{{ a.title }}</h3>
+      {{ a.body | markdownify }}
+      {%- if a.link_url %}
+      <p><a class="button" href="{{ a.link_url | relative_url }}">{{ a.link_text }}</a></p>
+      {%- endif %}
+    </div>
+  </article>
+{%- endfor %}
+</div>

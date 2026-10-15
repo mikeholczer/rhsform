@@ -1,0 +1,15 @@
+# Main navigation. Order and labels mirror the original site.
+- title: Home
+  url: /
+- title: Spirit Store
+  url: /spirit-store/
+- title: Corporate Sponsorship
+  url: /corporate-sponsorship/
+- title: News and Events
+  url: /news-and-events/
+- title: Marching Band
+  url: /marching-band/
+- title: About Us
+  url: /about-us/
+- title: Contact Us
+  url: /contact-us/

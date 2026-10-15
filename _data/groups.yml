@@ -1,0 +1,12 @@
+# Event groups shown on the News and Events page, in display order.
+# Each group's dated items live in `_data/events/<slug>.yml`.
+- slug: music_department
+  title: Music department dates
+
+- slug: marching_band
+  title: Marching band dates
+
+- slug: theatre_program
+  title: Theatre Program Dates
+  intro: "This year's fall play is Clue!"
+  outro: "Be sure to catch performances on:"

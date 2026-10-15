@@ -1,0 +1,25 @@
+{%- assign meetings = site.data.meetings %}
+{%- assign groups = site.data.groups %}
+<div class="events">
+  <div class="meeting-note">
+    <h3>{{ meetings.heading }}</h3>
+    <p>{{ meetings.detail }}</p>
+  </div>
+
+  {%- for group in groups %}
+  {%- assign items = site.data.events[group.slug] %}
+  <section class="event-group">
+    <h3>{{ group.title }}</h3>
+    {%- if group.intro %}<p>{{ group.intro }}</p>{% endif %}
+    <ul class="event-list">
+      {%- for item in items %}
+      <li>
+        <span class="event-date">{{ item.date }}</span>
+        <span class="event-text">{{ item.text }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- if group.outro %}<p>{{ group.outro }}</p>{% endif %}
+  </section>
+  {%- endfor %}
+</div>

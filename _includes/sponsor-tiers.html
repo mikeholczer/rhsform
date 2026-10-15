@@ -1,0 +1,15 @@
+<div class="tiers">
+{%- for tier in site.data.sponsor_tiers %}
+  <article class="tier tier--{{ tier.slug }}">
+    <h3 class="tier__name">{{ tier.name }} <span class="tier__price">{{ tier.price }}</span></h3>
+    <ul class="tier__benefits">
+      {%- for benefit in tier.benefits %}
+      <li>{{ benefit }}</li>
+      {%- endfor %}
+    </ul>
+    {%- if tier.image %}
+    <p class="tier__image"><img src="{{ tier.image | relative_url }}" alt="{{ tier.image_alt | default: '' }}"></p>
+    {%- endif %}
+  </article>
+{%- endfor %}
+</div>

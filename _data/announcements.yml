@@ -1,0 +1,55 @@
+# News cards shown on the home page.
+# Edit this file to change the announcements - no HTML required.
+
+- title: "Villa maya night – 10/21!"
+  image: /assets/images/home-villa-maya.png
+  image_alt: "Villa Maya fundraiser flyer benefiting the Marching Band"
+  body: |
+    Why cook dinner when you can get the amazing deliciousness that is Villa Maya AND support the Marching Band at the same time?!?
+
+    The Marching Band is hosting a Villa Maya Night on Wednesday, October 21st at the Norbeck location. Villa Maya will donate a portion of all proceeds from your order to the Marching Band — as long as you say you're supporting the band.
+
+    Dine in-person or place an order for pickup — and be sure to say that you're with the Rockville Marching Band!
+
+    See you there!
+
+- title: "Order your flocks now!"
+  image: /assets/images/home-flocking.png
+  image_alt: "Flocking fundraiser flyer"
+  body: |
+    Flocking is back! We are taking orders until 10/31.
+
+    - Flocking is a fundraiser for the entire Music Department — and a great way to bring fun to the whole neighborhood!
+    - Rockville families (music or non-music) can order a Flock of 10 orange and black flamingos to land in your yard or friend's yard in the neighborhood. Our amazing volunteers place the birds in your yard.
+    - After a few days the birds fly off to the next yard with those amazing volunteers! You sit back and enjoy the birds while they are in your yard - no need to do anything! It's a flocking good time!
+    - Flocks are $25 and can only be ordered and paid for digitally.
+    - We had fewer flocks than ever last year — and are trying to make up for it this year! Please help!
+
+    Flamingos start landing Sept 3 and Fly South by Nov 5.
+  link_text: Order Here
+  link_url: >-
+    https://docs.google.com/forms/d/e/1FAIpQLSeJbFqIBZfxN579VUPcqMKXj1SbwHaofcYnh9VtVPmDTvkvuA/viewform?usp=header
+
+- title: "popcorn! the marching band's biggest fundraiser has ended!"
+  body: |
+    Our annual Double Good Popcorn fundraiser was a huge success!
+
+    We raised nearly $3,000 for the Marching Band instrument truck!
+
+    The Front Ensemble were our top sellers & got to design [this t-shirt](https://friends-of-rockville-music.printify.me/product/31740604) (which you can buy!), and our top 10 sellers each received a Chipotle gift card!
+
+- title: "WE'RE ON INSTAGRAM!"
+  image: /assets/images/home-instagram.png
+  image_alt: "Follow Friends of Rockville Music on Instagram"
+  body: |
+    Stay up to date with all things FORM — and see pics and video of our amazing bands, orchestras, and choirs! [Click here to follow @rhs_form](https://www.instagram.com/rhs_form).
+
+- title: "Meet our sponsors!"
+  image: /assets/images/home-sponsor-roofing.png
+  image_alt: "United Roofing, LLC logo"
+  body: |
+    We are excited to welcome [United Roofing, LLC](https://www.unitedroofingdc.com/) as a Silver Sponsor of FORM!
+
+    United Roofing offer roofing, gutter, skylight services, and more to residential and commercial customers in Washington, DC—plus the best warranty in the business.
+
+    Learn more at [https://www.unitedroofingdc.com/](https://www.unitedroofingdc.com/) or get in touch by email at [unitedroofingdc@gmail.com](mailto:unitedroofingdc@gmail.com) or by phone at 202-568-6865.

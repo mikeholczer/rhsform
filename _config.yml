@@ -1,0 +1,38 @@
+# Site settings
+title: Friends of Rockville Music
+tagline: Supporting music at Rockville High School
+description: >-
+  Friends of Rockville Music (FORM) is an all-volunteer, private, charitable
+  501(c)(3) that supports the instrumental, choral, band and theatre programs
+  that make up the Music Department at Rockville High School in Rockville, Maryland.
+email: musicrhs@gmail.com
+author: Friends of Rockville Music
+
+# The URL of the published site. Leave `url` blank and `baseurl` empty until you
+# know where it will be hosted.
+#   - user / organisation or custom domain:  url: "https://example.org", baseurl: ""
+#   - GitHub Pages project site:             url: "https://<user>.github.io", baseurl: "/<repo>"
+url: ""
+baseurl: ""
+
+# Social / SEO
+instagram: rhs_form
+
+# Build settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+sass:
+  style: compressed
+
+# Files and folders that are docs for maintainers, not part of the published site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - GLOSSARY.md
+  - AGENTS.md
+  - vendor/
+  - .agents/
