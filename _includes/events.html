@@ -2,14 +2,14 @@
 {%- assign groups = site.data.groups %}
 <div class="events">
   <div class="meeting-note">
-    <h3>{{ meetings.heading }}</h3>
+    <h3 id="form-meetings">{{ meetings.heading }}</h3>
     <p>{{ meetings.detail }}</p>
   </div>
 
   {%- for group in groups %}
   {%- assign items = site.data.events[group.slug] %}
   <section class="event-group">
-    <h3>{{ group.title }}</h3>
+    <h3 id="events-{{ group.slug }}">{{ group.title }}</h3>
     {%- if group.intro %}<p>{{ group.intro }}</p>{% endif %}
     <ul class="event-list">
       {%- for item in items %}

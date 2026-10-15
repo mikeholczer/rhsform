@@ -2,7 +2,7 @@
 {%- for action in site.data.support_actions %}
   <li class="support-item">
     <span class="support-item__step" aria-hidden="true">{{ action.number }}</span>
-    <h3 class="support-item__title">{{ action.title }}</h3>
+    <h3 class="support-item__title" id="support-{{ action.number }}">{{ action.title }}</h3>
     <p>{{ action.body }}</p>
     {%- if action.link_url %}
     <a class="text-link" href="{{ action.link_url | relative_url }}">{{ action.link_text }}</a>

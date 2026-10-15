@@ -7,12 +7,12 @@
     </div>
     {%- else %}
     <div class="announcement__lead">
-      <h3>{{ a.title }}</h3>
+      <h3 id="news-{{ a.title | slugify }}">{{ a.title }}</h3>
     </div>
     {%- endif %}
     <div class="announcement__body">
       {%- if a.image %}
-      <h3>{{ a.title }}</h3>
+      <h3 id="news-{{ a.title | slugify }}">{{ a.title }}</h3>
       {%- endif %}
       {{ a.body | markdownify }}
       {%- if a.link_url %}

@@ -2,27 +2,23 @@
 Sticky side rail shared by the interior pages and the home page: an automatic
 "On this page" list plus a "Get involved" call to action.
 
-The list is parsed straight out of the rendered page body (kramdown gives every
-heading an id), so maintainers never have to keep a separate table of contents
-in sync. Page-level sections are h2s; only when a page has none (for example
-Spirit Store, which leads with an h3) does the h3 level stand in - that keeps
-component headings like sponsorship tier names and news headlines out of it.
+The list is parsed straight out of the rendered page body (h2 for page sections
+and h3 for their items - sponsorship tiers, news headlines, support actions,
+event groups), so maintainers never have to keep a separate table of contents in
+sync. Headings rendered by the data-driven includes carry their own ids; markdown
+headings get theirs from kramdown.
 
 Pass the rendered body in as `html`.
 {%- endcomment %}
-{%- assign toc_level = '2' -%}
-{%- unless include.html contains '<h2' -%}
-  {%- assign toc_level = '3' -%}
-{%- endunless -%}
 {%- assign chunks = include.html | split: '<h' -%}
 {%- assign toc = '' -%}
 {%- for chunk in chunks offset: 1 -%}
   {%- assign level = chunk | slice: 0, 1 -%}
-  {%- if level == toc_level -%}
+  {%- if level == '2' or level == '3' -%}
     {%- assign id = chunk | split: 'id="' | slice: 1 | first | split: '"' | first -%}
-    {%- assign title = chunk | split: '</h' | first | split: '>' | slice: 1, 100 | join: '>' | strip_html | strip -%}
+    {%- assign title = chunk | split: '</h' | first | append: ' ' | split: '>' | slice: 1, 100 | join: '>' | strip_html | strip -%}
     {%- if id != blank and title != blank -%}
-      {%- capture item -%}<li><a href="#{{ id }}">{{ title }}</a></li>{%- endcapture -%}
+      {%- capture item -%}<li{% if level == '3' %} class="page-rail__sub"{% endif %}><a href="#{{ id }}">{{ title }}</a></li>{%- endcapture -%}
       {%- assign toc = toc | append: item -%}
     {%- endif -%}
   {%- endif -%}

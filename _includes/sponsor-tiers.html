@@ -1,7 +1,7 @@
 <div class="tiers">
 {%- for tier in site.data.sponsor_tiers %}
   <article class="tier tier--{{ tier.slug }}">
-    <h3 class="tier__name">{{ tier.name }} <span class="tier__price">{{ tier.price }}</span></h3>
+    <h3 class="tier__name" id="tier-{{ tier.slug }}">{{ tier.name }} <span class="tier__price">{{ tier.price }}</span></h3>
     <ul class="tier__benefits">
       {%- for benefit in tier.benefits %}
       <li>{{ benefit }}</li>

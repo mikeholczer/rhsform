@@ -238,6 +238,10 @@ ol {
   top: 1.5rem;
   display: grid;
   gap: 2rem;
+  /* A long list (the home page has one) must not run off the viewport while
+     the rail is stuck, so let the rail itself scroll. */
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
   font-size: 0.95rem;
 }
 
@@ -267,6 +271,12 @@ ol {
 .page-rail__toc a:hover {
   color: var(--orange-dark);
   box-shadow: inset 2px 0 0 var(--orange);
+}
+
+/* Items nested under a page section (tiers, headlines, event groups...). */
+.page-rail__sub a {
+  padding-left: 1.6rem;
+  font-size: 0.9rem;
 }
 
 .page-rail__empty,
@@ -632,6 +642,8 @@ figure {
 
   .page-rail {
     position: static;
+    max-height: none;
+    overflow: visible;
   }
 }
 

@@ -49,8 +49,9 @@ Markdown cannot express.
 
 The home page and every interior page also render `_includes/rail.html`: a sticky
 side rail holding an automatic "On this page" list and a "Get involved" call to
-action. The list is read from the rendered page headings (h2, or h3 on pages that
-have no h2), so it stays in sync on its own. Interior pages show an orange masthead
+action. The list is read from the rendered page headings - the h2 page sections
+and their h3 items (sponsorship tiers, news headlines, support actions, event
+groups) - so it stays in sync on its own. Interior pages show an orange masthead
 kicker above the title, defaulting to the site title; set `kicker:` in a page's
 front matter to override it.
 
