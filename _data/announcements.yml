@@ -2,7 +2,7 @@
 # Edit this file to change the announcements - no HTML required.
 
 - title: "Villa maya night – 10/21!"
-  image: /assets/images/home-villa-maya.png
+  image: /assets/images/home-villa-maya.jpg
   image_alt: "Villa Maya fundraiser flyer benefiting the Marching Band"
   body: |
     Why cook dinner when you can get the amazing deliciousness that is Villa Maya AND support the Marching Band at the same time?!?
@@ -31,6 +31,8 @@
     https://docs.google.com/forms/d/e/1FAIpQLSeJbFqIBZfxN579VUPcqMKXj1SbwHaofcYnh9VtVPmDTvkvuA/viewform?usp=header
 
 - title: "popcorn! the marching band's biggest fundraiser has ended!"
+  image: /assets/images/home-popcorn.png
+  image-alt: "Popcorn fundraiser flyer"
   body: |
     Our annual Double Good Popcorn fundraiser was a huge success!
 
