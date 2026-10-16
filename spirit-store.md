@@ -14,8 +14,8 @@ Find our Spirit Store at: [https://friends-of-rockville-music.printify.me/](http
 
 Here's a sample of what's in the store right now:
 
-![FORM Spirit Store apparel and accessories](/assets/images/spirit-store-sample-1.png)
+![FORM Spirit Store apparel and accessories]({{ '/assets/images/spirit-store-sample-1.png' | relative_url }})
 
-![FORM Spirit Store apparel and accessories](/assets/images/spirit-store-sample-2.png)
+![FORM Spirit Store apparel and accessories]({{ '/assets/images/spirit-store-sample-2.png' | relative_url }})
 
 Have an idea for a design? Let us know!

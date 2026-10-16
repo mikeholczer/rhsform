@@ -4,7 +4,7 @@ title: Corporate Sponsorship
 permalink: /corporate-sponsorship/
 ---
 
-![Rockville music students perform](/assets/images/sponsorship-hero.png)
+![Rockville music students perform]({{ '/assets/images/sponsorship-hero.png' | relative_url }})
 
 ## We need your help!
 
@@ -20,7 +20,7 @@ This is a wonderful opportunity to grow your business while enriching your commu
 
 Sponsorship plans are for one school year and subsequent summer, September through September of the following year.
 
-![Sponsorship benefits at Rockville High School](/assets/images/sponsorship-intro.png)
+![Sponsorship benefits at Rockville High School]({{ '/assets/images/sponsorship-intro.png' | relative_url }})
 
 {% include sponsor-tiers.html %}
 
