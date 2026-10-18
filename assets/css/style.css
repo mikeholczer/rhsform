@@ -398,6 +398,71 @@ figure {
   margin-top: 0;
 }
 
+.action-with-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 300px;
+  max-width: 90vw;
+  /* Hairline edge: the tooltip's dark fill blends into the dark hero band.
+     drop-shadow (not box-shadow) so the shadow also wraps the caret. */
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+  text-align: left;
+}
+
+/* Bordered caret: an ink triangle over a hairline triangle one step
+   larger, so the hairline shows along the diagonals and the tip. The
+   top stays open where the caret meets the tooltip's bottom border. */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.28) transparent transparent transparent;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--ink) transparent transparent transparent;
+}
+
+.action-with-tooltip:hover .tooltip,
+.action-with-tooltip:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip p {
+  margin: 0;
+  color: #fff;
+}
+
 /* Support Us! */
 .support-list {
   list-style: none;

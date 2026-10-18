@@ -13,8 +13,13 @@ _data/support_actions.yml so the sign-up link stays defined in one place.
     <a href="{{ '/news-and-events/' | relative_url }}">NEWS and EVENTS</a> tab.
   </p>
   <p class="home-hero__shout">Get ready for an exciting year!</p>
+  {%- assign actions = site.data.support_actions %}
   <div class="home-hero__actions">
-    <a class="button" href="{{ site.data.support_actions[0].link_url }}">Become a member</a>
-    <a class="button button--ghost" href="{{ '/news-and-events/' | relative_url }}">See what's on</a>
+    {%- for action in actions %}
+      <div class="action-with-tooltip">
+        <a class="button" href="{{ action.link_url }}">{{ action.text }}</a>
+        <div class="tooltip">{{ action.description | markdownify }}</div>
+      </div>
+    {%- endfor %}
   </div>
 </div>

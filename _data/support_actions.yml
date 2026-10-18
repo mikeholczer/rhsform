@@ -1,28 +1,20 @@
-# "Support Us!" call-outs shown on the home page.
-# Edit this file to change the numbered support actions - no HTML required.
+# Call-outs shown on the home page.
+# Edit this file to change the call to action buttons - no HTML required.
 
-- number: 1
-  title: Become a FORM Member
-  body: >-
+- text: Become a FORM Member
+  description: >-
     Get the latest RHS Music news + find out how you can help give our students
     the best music education opportunities possible
-  link_text: Sign Up HERE
-  link_url: >-
-    https://docs.google.com/forms/d/e/1FAIpQLSeiTPh0zstwVibU07ljFLgKgpbEmiESg9g92ytEWPV0i62Xog/viewform
+  link_url: https://docs.google.com/forms/d/e/1FAIpQLSeiTPh0zstwVibU07ljFLgKgpbEmiESg9g92ytEWPV0i62Xog/viewform
 
-- number: 2
-  title: Make a Direct Donation
-  body: >-
+- text: Make a Donation
+  description: >-
     We spend roughly $10,000/year supporting music at Rockville High School -
     we need your help to keep that support going!
-  link_text: Make a Donation HERE
-  link_url: >-
-    https://docs.google.com/forms/d/e/1FAIpQLSfFyuUn1oTzKjmLa7jR-pdaRwCwAwbmeWqk9Bz2wjE10RBCNw/viewform
+  link_url: https://docs.google.com/forms/d/e/1FAIpQLSfFyuUn1oTzKjmLa7jR-pdaRwCwAwbmeWqk9Bz2wjE10RBCNw/viewform
 
-- number: 3
-  title: Become a Corporate Sponsor
-  body: >-
+- text: Volunteer
+  description: >-
     Corporate sponsors reap year-long benefits & target a hyper-local audience
     - all while supporting our incredible Rockville student musicians
-  link_text: Learn How HERE
-  link_url: /corporate-sponsorship/
+  link_url: https://www.signupgenius.com/go/8050F48A9AB28AA8-65365098-parent#/
