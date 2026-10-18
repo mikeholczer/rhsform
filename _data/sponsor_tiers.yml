@@ -28,6 +28,7 @@
 - name: Silver Sponsor
   slug: silver
   price: "$350"
+  image: /assets/images/sponsorship-silver.png
   benefits:
     - Logo (medium) on shared sponsors banner applied to our instrument truck—this truck travels to band competitions & events throughout Montgomery County, currently (4) scheduled for 2025-26
     - Logo (medium) on shared sponsors banner displayed in hallway at concerts & performances at RHS

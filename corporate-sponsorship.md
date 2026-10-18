@@ -4,8 +4,6 @@ title: Corporate Sponsorship
 permalink: /corporate-sponsorship/
 ---
 
-![Rockville music students perform]({{ '/assets/images/sponsorship-hero.png' | relative_url }})
-
 ## We need your help!
 
 Our school takes great pride in its vibrant and talented music program, which enriches the lives of students and strengthens our community. Over 200 students participate in our choirs, bands, orchestras, and marching band. We need your help to ensure these students continue to thrive.
@@ -19,8 +17,6 @@ Your sponsorship will directly benefit the music department at Rockville High Sc
 This is a wonderful opportunity to grow your business while enriching your community — and to support our students' dreams in the process. Your generosity would make a lasting difference in the lives of our students, our music program, and our community.
 
 Sponsorship plans are for one school year and subsequent summer, September through September of the following year.
-
-![Sponsorship benefits at Rockville High School]({{ '/assets/images/sponsorship-intro.png' | relative_url }})
 
 {% include sponsor-tiers.html %}
 

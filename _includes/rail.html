@@ -24,14 +24,12 @@ Pass the rendered body in as `html`.
   {%- endif -%}
 {%- endfor -%}
 <aside class="page-rail">
+  {%- if toc != '' %}
   <nav class="page-rail__toc" aria-label="On this page">
     <p class="page-rail__title">On this page</p>
-    {%- if toc != '' %}
     <ul>{{ toc }}</ul>
-    {%- else %}
-    <p class="page-rail__empty">A single short read.</p>
-    {%- endif %}
   </nav>
+  {%- endif %}
   <div class="page-rail__cta">
     <p class="page-rail__title">Get involved</p>
     <p class="page-rail__note">Help keep music strong for every Rockville student.</p>

@@ -10,14 +10,14 @@ _data/support_actions.yml so the sign-up link stays defined in one place.
   <p class="home-hero__lede">
     Want to know what's coming up soon? Find FORM member meetings and other
     Music Department &amp; Theatre Program event dates in our
-    <a href="{{ '/news-and-events/' | relative_url }}">NEWS and EVENTS</a> tab.
+    <a href="{{ '/news-and-events/' | relative_url }}">News and Events</a> tab.
   </p>
   <p class="home-hero__shout">Get ready for an exciting year!</p>
   {%- assign actions = site.data.support_actions %}
   <div class="home-hero__actions">
     {%- for action in actions %}
       <div class="action-with-tooltip">
-        <a class="button" href="{{ action.link_url }}">{{ action.text }}</a>
+        <a class="button" href="{{ action.link_url }}" target="_blank" rel="noopener">{{ action.text }}</a>
         <div class="tooltip">{{ action.description | markdownify }}</div>
       </div>
     {%- endfor %}
