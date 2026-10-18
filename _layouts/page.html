@@ -9,7 +9,7 @@ layout: default
     <p class="lede">{{ page.lede }}</p>
     {%- endif %}
   </header>
-  <div class="page-layout">
+  <div id="main-content" class="page-layout" tabindex="-1">
     {%- include rail.html html=content %}
     <div class="page-body">
 {{ content }}

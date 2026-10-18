@@ -1,0 +1,15 @@
+- name: "United Roofing, LLC"
+  image: /assets/images/home-sponsor-roofing.png
+  image_alt: "United Roofing, LLC logo"
+  text: |
+    United Roofing offer roofing, gutter, skylight services, and more to residential and commercial customers in Washington, DC—plus the best warranty in the business.
+
+    Learn more at [https://www.unitedroofingdc.com/](https://www.unitedroofingdc.com/) or get in touch by email at [unitedroofingdc@gmail.com](mailto:unitedroofingdc@gmail.com) or by phone at 202-568-6865.
+  link_url: https://www.unitedroofingdc.com/
+  link_text: "Visit United Roofing"
+
+- name: "Become a Sponsor"
+  text: |
+    Corporate sponsors reap year-long benefits & target a hyper-local audience - all while supporting our incredible Rockville student musicians.
+  link_url: /corporate-sponsorship/
+  link_text: "Learn About Sponsorship"

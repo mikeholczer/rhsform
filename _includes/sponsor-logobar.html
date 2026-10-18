@@ -1,0 +1,51 @@
+{%- comment %}
+Sponsor bar: a row of sponsor tiles sitting directly under the home hero,
+above the sticky page rail. Data-driven from _data/sponsors.yml. Each tile
+shows the sponsor's logo (or name wordmark) next to a short text block. The
+logo links out via link_url; links inside the text are rendered as written
+(markdown), so the tile must not itself be an anchor. Tiles sit side by side
+and never wrap; with two or more sponsors the track duplicates itself and
+scrolls slowly left in a seamless loop. Marquee pauses on hover/focus and is
+disabled for prefers-reduced-motion. Single sponsor renders centred with no
+animation. No JavaScript.
+{%- endcomment %}
+{%- assign sponsors = site.data.sponsors %}
+{%- if sponsors and sponsors.size > 0 %}
+{%- assign copies = 1 %}
+{%- if sponsors.size >= 2 %}{%- assign copies = 2 %}{%- endif %}
+<section class="logobar{% if copies == 2 %} logobar--marquee{% endif %}" aria-label="Our sponsors">
+  <div class="logobar__viewport">
+    <ul class="logobar__track">
+      {%- for copy in (1..copies) %}
+      {%- for sponsor in sponsors %}
+      <li class="logobar__item">
+        {%- capture sponsor_title %}{{ sponsor.name }}{% if sponsor.description %} — {{ sponsor.description }}{% endif %}{% endcapture %}
+        {%- if sponsor.link_url %}
+        <a class="logobar__logo-link" href="{{ sponsor.link_url }}" title="{{ sponsor_title | strip }}"
+           {%- if sponsor.link_url contains '://' %} target="_blank" rel="noopener"{% endif %}>
+        {%- else %}
+        <span class="logobar__logo-link" title="{{ sponsor_title | strip }}">
+        {%- endif %}
+          {%- if sponsor.image %}
+          <img class="logobar__logo" src="{{ sponsor.image | relative_url }}"
+               alt="{{ sponsor.image_alt | default: sponsor.name }}" loading="lazy">
+          {%- else %}
+          <span class="logobar__wordmark">{{ sponsor.name }}</span>
+          {%- endif %}
+        {%- if sponsor.link_url %}
+        </a>
+        {%- else %}
+        </span>
+        {%- endif %}
+        {%- if sponsor.text %}
+        <div class="logobar__text">
+          {{ sponsor.text | markdownify }}
+        </div>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}

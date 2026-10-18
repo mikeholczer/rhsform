@@ -3,7 +3,8 @@ layout: default
 ---
 <div class="home">
   {%- include home-hero.html %}
-  <div class="page-layout">
+  {%- include sponsor-logobar.html %}
+  <div id="main-content" class="page-layout" tabindex="-1">
     {%- include rail.html html=content %}
     <div class="home-body">
 {{ content }}

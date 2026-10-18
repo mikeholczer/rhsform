@@ -657,3 +657,143 @@ figure {
     width: auto;
   }
 }
+
+/* Sponsor logo bar: quiet row of greyscale logos flush under
+   the hero, above the sticky page rail. Items carry their own right margin
+   (rather than the track a gap) so the duplicated marquee copy can loop with
+   an exact translateX(-50%). */
+.logobar {
+  position: relative;
+  min-height: 4.25rem;
+  margin: -2.5rem calc(50% - 50vw) 2.5rem;
+  padding: 0.7rem 0 0.8rem;
+  padding-left: 0.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.logobar__kicker {
+  display: none;
+}
+
+.logobar__viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tiles always sit side by side in one row; when they can't all fit, the
+   marquee below takes over rather than wrapping. */
+.logobar__track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 100%;
+}
+
+.logobar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 1rem;
+}
+
+.logobar__logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex: none;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logobar__logo {
+  height: 1.9rem;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.logobar__logo-link:hover .logobar__logo,
+.logobar__logo-link:focus-visible .logobar__logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* Fallback when a sponsor has no logo image: its name set as a wordmark. */
+.logobar__wordmark {
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  transition: color 0.25s ease;
+}
+
+.logobar__logo-link:hover .logobar__wordmark,
+.logobar__logo-link:focus-visible .logobar__wordmark {
+  color: var(--orange-dark);
+}
+
+/* Text block next to the logo: small tier-style label, then the sponsor's
+   own copy (markdown, so its links render as written). */
+.logobar__text {
+  max-width: 30rem;
+}
+
+.logobar__text p {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.logobar__text p + p {
+  margin-top: 0.35rem;
+}
+
+.logobar__text .logobar__caption {
+  display: none;
+}
+
+/* Marquee mode: the include duplicates the list when it has enough entries,
+   so a single -50% translate loops seamlessly. */
+@keyframes logobar-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logobar--marquee .logobar__viewport {
+  overflow: hidden;
+}
+
+.logobar--marquee .logobar__track {
+  justify-content: flex-start;
+  width: max-content;
+  min-width: 0;
+  animation: logobar-scroll 60s linear infinite;
+}
+
+.logobar--marquee:hover .logobar__track,
+.logobar--marquee:focus-within .logobar__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logobar--marquee .logobar__track {
+    animation: none;
+  }
+}
