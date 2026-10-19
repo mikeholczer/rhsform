@@ -11,6 +11,7 @@
   --header-bg: #101216;
   --header-ink: #eef0f3;
   --footer-ink: #c7ccd2;
+  --green: #2f7d4f;
   --max: 64rem;
   --radius: 12px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -649,6 +650,100 @@ figure {
   width: 100%;
   max-width: 180px;
   border-radius: var(--radius);
+}
+
+/* Sponsorship tier comparison grid (benefits down the left, tiers across top) */
+.tier-grid {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.tier-grid__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 640px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tier-grid__heading {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.tier-grid__head {
+  border-bottom: 2px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  background: var(--surface);
+  vertical-align: bottom;
+}
+
+.tier-grid__head--corner {
+  text-align: left;
+  background: #fff;
+  border-right: 2px solid var(--border);
+  font-weight: 700;
+  color: var(--ink-soft);
+  z-index: 3;
+}
+
+.tier-grid__tier-name {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tier-grid__tier-price {
+  font-weight: 700;
+  color: var(--orange-dark);
+  font-size: 0.9rem;
+}
+
+.tier-grid__tier-image {
+  margin-top: 0.4rem;
+  width: 90px;
+  border-radius: var(--radius);
+}
+
+.tier-grid__label {
+  background: #fff;
+  border-right: 2px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tier-grid__cell {
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.tier-grid__cell:last-child {
+  border-right: none;
+}
+
+.tier-grid__check {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.tier-grid__note {
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.tier-grid__dash {
+  color: var(--border);
 }
 
 /* Footer */

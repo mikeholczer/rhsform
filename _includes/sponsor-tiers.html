@@ -1,15 +1,49 @@
-<div class="tiers">
-{%- for tier in site.data.sponsor_tiers %}
-  <article class="tier tier--{{ tier.slug }}">
-    <h3 class="tier__name" id="tier-{{ tier.slug }}">{{ tier.name }} <span class="tier__price">{{ tier.price }}</span></h3>
-    <ul class="tier__benefits">
-      {%- for benefit in tier.benefits %}
-      <li>{{ benefit }}</li>
+{%- comment %}
+Sponsorship tier comparison grid: benefits listed down the left side, tiers
+across the top. Each cell shows a check when the tier includes the benefit, or
+a few words when the benefit has a tier-specific variation (e.g. logo size).
+Data-driven from _data/sponsor_tiers.yml.
+{%- endcomment %}
+{%- assign data = site.data.sponsor_tiers -%}
+{%- assign benefits = data.benefits -%}
+{%- assign tiers = data.tiers -%}
+{%- if tiers and tiers.size > 0 %}
+<div class="tier-grid">
+  <h2 class="tier-grid__heading" id="sponsorship-benefits-by-tier">Sponsorship benefits by tier</h2>
+  <table class="tier-grid__table">
+    <thead>
+      <tr>
+        <th class="tier-grid__head tier-grid__head--corner" scope="col">Benefit</th>
+        {%- for tier in tiers %}
+        <th class="tier-grid__head tier-grid__head--tier" scope="col">
+          <div class="tier-grid__tier-name">{{ tier.name }}</div>
+          <div class="tier-grid__tier-price">{{ tier.price }}</div>
+          {%- if tier.image %}
+          <img class="tier-grid__tier-image" src="{{ tier.image | relative_url }}" alt="{{ tier.image_alt | default: tier.name }}">
+          {%- endif %}
+        </th>
+        {%- endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {%- for benefit in benefits %}
+      <tr>
+        <th class="tier-grid__label" scope="row">{{ benefit.label }}</th>
+        {%- for tier in tiers %}
+        {%- assign value = tier.properties[benefit.key] -%}
+        <td class="tier-grid__cell">
+          {%- if value == true %}
+          <span class="tier-grid__check" aria-label="Included">&#10003;</span>
+          {%- elsif value %}
+          <span class="tier-grid__note">{{ value }}</span>
+          {%- else %}
+          <span class="tier-grid__dash" aria-hidden="true">&#8212;</span>
+          {%- endif %}
+        </td>
+        {%- endfor %}
+      </tr>
       {%- endfor %}
-    </ul>
-    {%- if tier.image %}
-    <p class="tier__image"><img src="{{ tier.image | relative_url }}" alt="{{ tier.image_alt | default: '' }}"></p>
-    {%- endif %}
-  </article>
-{%- endfor %}
+    </tbody>
+  </table>
 </div>
+{%- endif %}
